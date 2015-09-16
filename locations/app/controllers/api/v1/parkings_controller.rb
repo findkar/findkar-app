@@ -2,6 +2,7 @@ class Api::V1::ParkingsController < ApplicationController
 	def index
 		parkings = Parking.where(user_id: session[:user_id])
 		render json: parkings
+
 	end
 
 	def create

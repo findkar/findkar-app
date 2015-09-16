@@ -17,9 +17,16 @@
 }
 .hideme{
     display: none;
+    visibility: hidden;
+}
+
+.showme{
+	display: inline;
+	visibility: visible;
 }
 
 #google-map{
     width: 800px;
     height: 580px;
 }
+
