@@ -1,34 +1,32 @@
+<!-- just here so it doesn't break -->
+<div class="hideme" id="map" style="width:800px;height:580px;"></div>
+
 <button id="modal-log">Log In / Sign Up</button>
 
 
 <div id="modal">
-	<div class="modal-content">
-		<div class="modal-login">
-			<h3>Log in</h3>
-			<form action="/gettingin">
-				<input type="text" name="email">
-				<input type="text" name="password">
-				<button>Log In</button>
-			</form>
-		</div>
+    <div class="modal-content">
+        <div class="modal-login">
+            <h3>Log in</h3>
+            <form action="/gettingin">
+                <input type="text" name="email">
+                <input type="text" name="password">
+                <button>Log In</button>
+            </form>
+        </div>
 
-		<div class="modal-signup">
-			<h3>Sign Up</h3>
-			<form action='/users' method='POST'>
-				<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>' />
-				Email: 
-				<input type='text' name='email'>
-				Password:
-				<input type='password' name='password'>
-				Phone Number:
-				<input type='text' name='phone'>
-				<button>Sign Up!</button>
-			</form>
-		</div>	
-	</div>
+        <div class="modal-signup">
+            <h3>Sign Up</h3>
+            <form action='/users' method='POST'>
+                <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>' />
+                Email: 
+                <input type='text' name='email'>
+                Password:
+                <input type='password' name='password'>
+                Phone Number:
+                <input type='text' name='phone'>
+                <button>Sign Up!</button>
+            </form>
+        </div>    
+    </div>
 </div>
-
-
-
-
-

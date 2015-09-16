@@ -1,9 +1,5 @@
 class Api::V1::ParkingsController < ApplicationController
 	def index
-		lat = cookies[:lat]
-		long = cookies[:long]
-		puts lat
-		puts long
 		parkings = Parking.where(user_id: session[:user_id])
 		render json: parkings
 	end
@@ -32,13 +28,6 @@ class Api::V1::ParkingsController < ApplicationController
 
 
 	private
-
-		def parking_params
-
-			# API CALL HERE
-
-			params.permit(:user_id, :longitude, :latitude, :time_up)
-		end
 
 		def time_params
 			params.permit(:time_up)
