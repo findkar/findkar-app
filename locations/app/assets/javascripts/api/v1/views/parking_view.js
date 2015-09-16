@@ -14,20 +14,39 @@ var ParkingView = Backbone.View.extend({
 
 
 var CreateParkingView = Backbone.View.extend({
-	el: '.add-parking',
-	events: {'click .start': 'createParking'},
+    // initialize: function(){
+    //     this.listenTo(this.collection, 'all', this.logit)
+    // },
 
-	createParking: function(){
-		console.log("hello");
-		console.log(session[:user_id]);
-		$(".time-paid").val('');
-	}
+    // logit: function(event_name){
+    //     console.log(event_name);
+    // },
+
+    el: '#add-parking',
+    events: {'click .start': 'createParking'},
+
+    createParking: function(){
+        var that = this;
+        
+        navigator.geolocation.getCurrentPosition(function(position) {
+     var geolocate = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+     var latitude = position.coords.latitude;
+     var longitude = position.coords.longitude;
+
+            var time = this.$('#time-paid').val();
+            that.collection.create({time_up: time, longitude: longitude, latitude: latitude});
+            $("#time-paid").val('');
+     console.log(latitude)
+     console.log(longitude)
+        });
+       
+    }
 
 })
 
 
 
-createParkingView = new CreateParkingView();
+createParkingView = new CreateParkingView({collection: parkings});
 
 
 

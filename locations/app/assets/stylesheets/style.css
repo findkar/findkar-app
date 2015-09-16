@@ -15,3 +15,11 @@
 	top: 100px;
 	width: 40%;
 }
+.hideme{
+	display: none;
+}
+
+#google-map{
+	width: 800px;
+	height: 580px;
+}

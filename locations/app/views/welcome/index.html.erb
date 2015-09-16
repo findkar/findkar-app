@@ -1,30 +1,38 @@
-<a href='/logout'>Log out</a>
-<h1>Hello You're logged in</h1>
 
+<!-- header -->
 <div class="row">
-	
-	<div class="col-md-9" id="map" style="width:800px;height:580px;"></div>
+	<div class="col-md-4">
+		<h1>Dude, where's my car?</h1>
+	</div>
+	<div class="col-md-7">
+	</div>
+	<div class="col-md-1">
+		<a href='/logout'>Log out</a>
+	</div>
+</div>
 
+<!-- container -->
+<div class="row">
+	<!-- google map display -->
+	<div class="col-md-9" id="google-map"></div>
 
+	<!-- right side column -->
 	<div class="col-md-3">
 		<div id="right-side">
-			pinpoint your car <br>
-			<button class="start">Park</button><br>
-			<button onclick="getLocation()">Try It</button>
-			<p id="demo"></p>
-			Time Meter:
-			<input type="text" name="time-paid">
+			<div id="add-parking">
+				pinpoint your car <br>
+				<button class="start">Park</button><br>
+
+				Time Meter:
+				<input type="text" id="time-paid">
+			</div>
 		</div>
+
 		<div id="after-set-park" class="hideme">
 			<button class="track">Find my car</button><br>
 			Add more time:<br>
 			<input type="text" name="added-time">
 		</div>
+
 	</div>
-</div>
-
-
-
-
-<div>
 </div>

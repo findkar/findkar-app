@@ -1,34 +1,37 @@
 console.log("google map linked")
+$(function() {
 
-function initialize() {
-  var mapProp = {
-    center:new google.maps.LatLng(40.7400379,-73.9897665),
-    zoom:17,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("map"),mapProp);
-}
-
-//------ GEOLOCATION
-var x = document.getElementById("demo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
+    if(!!navigator.geolocation) {
+    
+        var map;
+    
+        var mapOptions = {
+            zoom: 17,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        
+        map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+    
+        navigator.geolocation.getCurrentPosition(function(position) {
+        
+            var geolocate = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            console.log(geolocate);
+            var geoMarker = new google.maps.Marker({
+                map: map,
+                position: geolocate,
+    			animation: google.maps.Animation.DROP
+                // content:
+                //     '<p> You are here </p>' 
+                    // '<h2>Latitude: ' + position.coords.latitude + '</h2>' +
+                    // '<h2>Longitude: ' + position.coords.longitude + '</h2>'
+            });
+            
+            map.setCenter(geolocate);
+            
+        });
+        
+    } else {
+        document.getElementById('google_canvas').innerHTML = 'No Geolocation Support.';
     }
-}
-
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;	
-    // console.log(position.coords.latitude)
-}
-
-
-
-
-
-
-google.maps.event.addDomListener(window, 'load', initialize);
+    
+});
