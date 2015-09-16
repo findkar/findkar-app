@@ -2,7 +2,7 @@ console.log("google map linked")
 
 function initialize() {
   var mapProp = {
-    center:new google.maps.LatLng(40.7127840,-74.0059410),
+    center:new google.maps.LatLng(40.7400379,-73.9897665),
     zoom:17,
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
