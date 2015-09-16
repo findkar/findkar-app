@@ -1,12 +1,15 @@
 class Api::V1::ParkingsController < ApplicationController
 	def index
-
+		lat = cookies[:lat]
+		long = cookies[:long]
+		puts lat
+		puts long
 		parkings = Parking.where(user_id: session[:user_id])
 		render json: parkings
 	end
 
 	def create
-		parking = Parking.create(parking_params)
+		parking = Parking.create({user_id: session[:user_id], time_up: params[:time_up], longitude: params[:longitude], latitude: params[:latitude]})
 		render json: parking
 	end
 

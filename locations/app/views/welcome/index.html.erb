@@ -9,11 +9,16 @@
 	<div class="col-md-3">
 		<div id="right-side">
 			pinpoint your car <br>
-			<button class="start">Park</button><br>
-			<button onclick="getLocation()">Try It</button>
-			<p id="demo"></p>
-			Time Meter:
-			<input type="text" name="time-paid">
+			<!-- <form action='/api/v1/parkings' method='POST'>
+				<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>' /> -->
+				
+			<div id="add-parking">
+				<button class="start">Park</button><br>
+				<p id="demo"></p>
+				Time Meter:
+				<input type="text" id="time-paid">
+			</div>
+<!-- 			</form> -->
 		</div>
 		<div id="after-set-park" class="hideme">
 			<button class="track">Find my car</button><br>
