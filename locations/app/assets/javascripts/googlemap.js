@@ -19,7 +19,7 @@ $(function() {
             var geoMarker = new google.maps.Marker({
                 map: map,
                 position: geolocate,
-                animation: google.maps.Animation.DROP
+    			animation: google.maps.Animation.DROP
                 // content:
                 //     '<p> You are here </p>' 
                     // '<h2>Latitude: ' + position.coords.latitude + '</h2>' +
