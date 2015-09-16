@@ -1,6 +1,7 @@
 class Api::V1::ParkingsController < ApplicationController
 	def index
-		parkings = Parking.all
+
+		parkings = Parking.where(user_id: session[:user_id])
 		render json: parkings
 	end
 
@@ -11,7 +12,7 @@ class Api::V1::ParkingsController < ApplicationController
 
 	def update
 		parking = Parking.find(params[:id])
-		parking.update(parking_params)
+		parking.update(time_params)
 		render json: parking
 	end
 
@@ -30,6 +31,14 @@ class Api::V1::ParkingsController < ApplicationController
 	private
 
 		def parking_params
+
+			# API CALL HERE
+
 			params.permit(:user_id, :longitude, :latitude, :time_up)
 		end
+
+		def time_params
+			params.permit(:time_up)
+		end
+		
 end
