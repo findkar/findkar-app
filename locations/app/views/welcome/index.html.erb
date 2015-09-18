@@ -1,3 +1,12 @@
+<script type='text/javascript'>
+    <% if(@parkings.length > 0) %>
+        var userParkingId = <%= @parkings.first.id %>;
+    <% end %>
+
+</script>
+
+
+
 <!-- header -->
 <div class="row">
     <div class="col-md-4">
@@ -9,6 +18,7 @@
         <a href='/logout'>Log out</a>
     </div>
 </div>
+
 
 <!-- container -->
 <div class="row">
@@ -26,13 +36,18 @@
                 <input type="text" id="time-paid">
             </div>
 
-		        <div id="after-set-park" class="hideme">
-		            <button class="track">Find my car</button><br>
-		            Add more time:<br>
-		            <input type="text" id="added-time">
-		            <button id="increase-time">Add Time</button>
-		            <button id="delete-time">Found Car</button>
-		        </div>
+                <div id="after-set-park" class="hideme">
+                    <button class="track">Find my car</button><br>
+                    Add more time:<br>
+                    <input type="text" id="added-time">
+                    <button id="increase-time">Add Time</button>
+                    <button id="delete-time">Found Car</button>
+
+                    <div id='time-left'>
+                        <h3 id='timer'></h3>
+                    </div>
+
+                </div>
 
         </div>
     </div>

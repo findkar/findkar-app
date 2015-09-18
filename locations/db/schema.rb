@@ -15,8 +15,10 @@ ActiveRecord::Schema.define(version: 20150915182431) do
 
   create_table "parkings", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "latitude"
-    t.string   "longitude"
+    t.string   "carLatitude"
+    t.string   "carLongitude"
+    t.string   "currentLatitude"
+    t.string   "currentLongitude"
     t.string   "time_up"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
