@@ -1,5 +1,4 @@
 class Api::V1::ParkingsController < ApplicationController
-	require "HTTParty"
 	def index
 		api_key = ENV["GOOGLE_MAP"]
 		parkings = Parking.where(user_id: session[:user_id])
