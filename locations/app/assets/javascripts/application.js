@@ -15,4 +15,6 @@
 //= require underscore
 //= require backbone
 //= require api/v1/v1
+//= require flipclock.js
+//= require flipclock.min.js
 //= require_tree .

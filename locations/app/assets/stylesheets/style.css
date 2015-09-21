@@ -1,32 +1,134 @@
-#modal{
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-    width: 100%;
-    height: 100%;
+body{
+    background-color: #2c3e50;
+}
+#right-side{
+    padding-top: 8px;
+}
+.login-container{
+    margin-top: 20%;
+    margin-bottom: 20%;
     background-color: rgba(0,0,0,0.5);
+    border: 1px solid white;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+}
+.top-header{
+    background-color: rgba(0,0,0,0.5);
+    color: #A9E2F3;
+    padding-top:1px;
+    padding-bottom:3px;
+    margin-bottom:-5px;
+    font-size: 20px;
+}
+.index-background{
+    background-color: #2c3e50;
+}
+.info-desc{
+    padding: 13px 0px 0px 0px; 
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.top-border{
+    box-shadow: 0px 0px 3px 3px #0ff;
+    position: relative;
+}
+.bottom-border{
+    background-color: rgba(0,0,0,0.5);
+    color: #A9E2F3;
+    text-align: center;
+    font-size: 15px;
+    height: 40px;
+    padding-top: 7px;
+}
+.welcome-info h1,h4{
+    color: white;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+.instructions{
+    margin-top: 10px;
+    color: white;
+    background-color: rgba(0,0,0,0.2);
+    padding-left: 20px;
+    border-radius: 25px;
+    font-size: 15px;
 }
 
-.modal-content{
-    position: relative;
-    margin: 0 30%;
-    background-color: white;
-    top: 100px;
-    width: 40%;
+.container-fluid{
+    padding-top: 4px;
+}
+.welcome-background{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(welcomebackground.jpg) no-repeat;
+    background-size: cover; 
+}
+.main-logo{
+    height: auto;
+    width: 30%;
+}
+.index-logo{
+    height: auto;
+    width: 8%;
+}
+.button-login{
+    padding: 10px 0px 70px 0px; 
+}
+.form-container{
+    color: white;
 }
 .hideme{
     display: none;
     visibility: hidden;
 }
-
 .showme{
-	display: inline;
-	visibility: visible;
+    display: block;
+    visibility: visible;
 }
-
 #google-map{
-    width: 800px;
-    height: 580px;
+    height: 50vh;
 }
 
+@media (min-width: 767px){
+    #google-map{
+        min-height: 90vh;
+    }
+}
+
+@media(max-width: 767px){
+    .instructions{
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+.img-responsive{
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#time-left{
+    width: 305px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.col-xs-6{
+    padding-right:0;
+    padding-left:0;
+}
+.pull-right{
+    margin-right: 15px;
+}

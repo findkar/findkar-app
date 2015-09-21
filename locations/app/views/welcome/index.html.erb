@@ -1,54 +1,68 @@
 <script type='text/javascript'>
     <% if(@parkings.length > 0) %>
         var userParkingId = <%= @parkings.first.id %>;
+       
     <% end %>
 
 </script>
 
 
-
 <!-- header -->
-<div class="row">
-    <div class="col-md-4">
-        <h1>Dude, where's my car?</h1>
-    </div>
-    <div class="col-md-7">
-    </div>
-    <div class="col-md-1">
-        <a href='/logout'>Log out</a>
-    </div>
+
+<div class="top-header">
+    <p><img src="/assets/caritlogo.png" class="index-logo">
+    <a href='/logout' class="pull-right">Log out</a>
+    </p>
 </div>
+ 
+
+<div class="top-border"></div>
+<div class="container-fluid">
 
 
-<!-- container -->
-<div class="row">
-    <!-- google map display -->
-    <div class="col-md-9" id="google-map"></div>
+  <!-- container -->
+  <div class="row">
+      <!-- google map display -->
+      <div class="col-sm-8" class="showme" id="google-map"></div>
 
-    <!-- right side column -->
-    <div class="col-md-3">
-        <div id="right-side">
-            <div id="add-parking">
-                pinpoint your car <br>
-                <button class="start">Park</button><br>
+      <!-- right side column -->
+      <div class="col-sm-4">
+          <div id="right-side">
 
-                Time Meter:
-                <input type="text" id="time-paid">
-            </div>
+              <div id="add-parking"><br>
+                  <button class="start btn btn-primary btn-block">Park your car!</button><br>
+                  <input class="form-control" type="text" id="time-paid" placeholder="Add time minutes!">
+                  <div class="instructions panel">
+                      <h4>Instructions</h4>
+                    <p>1. 'Park your car' to save car location</p>
+                    <p>2. Add meter time (option)</p>
+                    <p>3. 'Find car' to get directions back to car</p>
+                    <p>4. 'Add time' (option)</p>
+                    <p>5. 'Found car' to restart</p>
+                  </div>
+              </div>
 
-                <div id="after-set-park" class="hideme">
-                    <button class="track">Find my car</button><br>
-                    Add more time:<br>
-                    <input type="text" id="added-time">
-                    <button id="increase-time">Add Time</button>
-                    <button id="delete-time">Found Car</button>
-
-                    <div id='time-left'>
-                        <h3 id='timer'></h3>
+              <div id="after-set-park" class="hideme">
+                 <div class="form-group">
+                    <button class="track btn btn-primary btn-block">Find my car</button>
+                  </div>
+                  <div class="form-group">
+                    <a href="/"><button class="btn btn-danger btn-block" id="delete-time">Found Car</button></a>
+                  </div>     
+                  <div class="form-group">
+                    <div class="col-xs-6">
+                      <input class="form-control" type="text" id="added-time" placeholder="Add minutes">
                     </div>
+                    <div class="col-xs-6">
+                      <a href="/"><button class="btn btn-primary btn-block" id="increase-time">Add Time</button></a>
+                    </div>
+                  </div>
+                      
+                  <div id='time-left'></div>
+              </div>
 
-                </div>
-
-        </div>
-    </div>
-</div>
+          </div>
+      </div>
+  </div>
+</div><!-- container -->
+<footer class="bottom-border">Copyright ©2015, All Rights Reserved</footer>
