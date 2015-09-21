@@ -39,5 +39,5 @@ Has this ever happened to you? You park your car around an unfamiliar area or yo
   * Parkings - Store user's id, car location, current location, and time meter
 
 ## Deployment
-* Heroku (WEBSITE GOES HERE)
+* Heroku (<a href="https://nameless-lowlands-1036.herokuapp.com/">Car it</a>)
 * Github (<a href="https://github.com/findkar/findkar-app">Car app</a>)
